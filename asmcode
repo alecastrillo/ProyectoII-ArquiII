@@ -14,10 +14,10 @@ Init:
     load        Rn4, 0                  // Primer registro del histograma en el que va a realizar la normalización
     load        Rn5, 64                 // Último registro del histograma en el que va a realizar la normalización
     load        Rn6, 255                // Intensidad máxima
-    b Normalize                         // Salta al loop que va a normalizar el histograma
+    b           Normalize               // Salta al loop que va a normalizar el histograma
     load        Rn1, NewImgF            // Guarda la direccion de memoria donde finaliza la imagen ecualizada en Rn1
-    b BuildImg                          // Crea la imagen equalizada con los valores del histograma
-    b END                               // Finaliza el programa
+    b           BuildImg                // Crea la imagen equalizada con los valores del histograma
+    b           END                     // Finaliza el programa
 
 
 
