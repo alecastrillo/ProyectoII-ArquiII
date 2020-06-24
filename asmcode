@@ -46,7 +46,7 @@ Normalize:
     muls_4x16   Rn4, Rn6                // Multiplica por la intensidad máxima
     inc         Rn4                     // Pasa a normalizar el siguiente registro del histograma
     cmp         Rn4, Rn5                // Verifica si ha recorrido todo el histograma
-    bnq Normalize                       // Si aún no los ha normalizado todos sigue en el loop
+    bnq         Normalize               // Si aún no los ha normalizado todos sigue en el loop
                                         // Si ya los normalizó todos entonces vuelve al flujo normal
     
     
