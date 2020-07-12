@@ -23,7 +23,7 @@ Init:
 
 BuildHistogram:
 
-    load_8x8    Rv1, Rn1                // Sube 8 pixeles al registro vectorial Rv1
+    load_8x8    Rn1, Rv1                // Sube 8 pixeles al registro vectorial Rv1
     divs_8x8    Rv2, Rv1, 4             // Divide los 8 pixeles entre 4 para tomar el registro del histograma al que pertenecen 
     mods_8x8    Rv2, Rv1, 4             // Asigna la posición del registro del histograma a la que pertenece cada pixel en los dos primeros bits
     inc1_4x16   Rv2, 0                  // Incrementa al registro del histograma que se indica en el vector 0 del registro Rv2
@@ -52,11 +52,11 @@ Normalize:
     
 BuildImg:
 
-    load_8x8    Rv1, Rn1                // Sube 8 pixeles de la imagen original al registro vectorial Rv1
+    load_8x8    Rn1, Rv1                // Sube 8 pixeles de la imagen original al registro vectorial Rv1
     divs_8x8    Rv2, Rv1, 4             // Divide los 8 pixeles entre 4 para tomar el registro del histograma al que pertenecen 
     mods_8x8    Rv2, Rv1, 4             // Asigna la posición del registro del histograma a la que pertenece cada pixel en los dos primeros bits
     get_8x8     Rv2, Rv2                // Toma los nuevos valores de instensidades del histograma
-    store_8x8   Rv2, Rn2                // Almacena los nuevos valores de los pixeles en memoria justo después de la imagen original
+    store_8x8   Rn2, Rv2                // Almacena los nuevos valores de los pixeles en memoria justo después de la imagen original
     add         Rn2, Rn2, 64            // Avanza 8 pixeles 
     cmp         Rn1, Rn2                // Verifica si ya construyó la imagen por completo
     bnq         BuildImg                // Si no ha terminado continúa en el loop
