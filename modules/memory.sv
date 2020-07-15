@@ -1,13 +1,16 @@
-module memory(clk, address, inputData, writeEnable, out);
+module memory(clk, address, addressB,
+				  inputData, inputDataB, 
+				  writeEnable, writeEnableB,
+				  out, outB);
 
 	// --- INPUT SIGNALS --- //
 	input clk;
-	input [15:0] address;
-	input [63:0] inputData;
-	input writeEnable;
+	input [15:0] address, addressB;
+	input [63:0] inputData, inputDataB;
+	input writeEnable, writeEnableB;
 	
 	// --- OUTPUT SIGNALS --- //
-	output logic [63:0] out;
+	output logic [63:0] out, outB;
 	
 	
 	logic [63:0] mem [49151:0];
@@ -23,10 +26,17 @@ module memory(clk, address, inputData, writeEnable, out);
 		end
 		
 		else out <= mem[address];
-	
-	
 	end
-
+	
+	always_ff @(posedge clk) begin
+		if(writeEnableB) begin
+			mem[addressB] <= inputDataB;
+			outB = inputDataB;
+		end
+		
+		else outB <= mem[addressB];
+	end
+	
 
 
 endmodule
