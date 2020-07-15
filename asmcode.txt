@@ -1,7 +1,3 @@
-#ImgI = Dirección de memoria donde empieza la imagen original
-#ImgF = Dirección de memoria donde finaliza la imagen original
-#NewImgF = Dirección de memoria donde finaliza la imagen ecualizada
-#ImgSize = Tamaño de la imagen
 _Init:
 mov         Rn1, 1               // ImgI - Guarda la direccion de memoria donde empieza la imagen en Rn1
 mov         Rn2, 2               // ImgF - Guarda la direccion de memoria donde finaliza la imagen en Rn2
@@ -16,7 +12,6 @@ b           _BuildImg                // Crea la imagen equalizada con los valore
 b           _END                     // Finaliza el programa
 _BuildHistogram:
 load_8x8    Rn1, Rv1                // Sube 8 pixeles al registro vectorial Rv1
-divs_8x8    Rv2, Rv1, 4             // Divide los 8 pixeles entre 4 para tomar el registro del histograma al que pertenecen 
 mods_8x8    Rv2, Rv1, 4             // Asigna la posición del registro del histograma a la que pertenece cada pixel en los dos primeros bits
 inc_4x16   Rv2, 0                  // Incrementa al registro del histograma que se indica en el vector 0 del registro Rv2
 inc_4x16   Rv2, 1                  // Incrementa al registro del histograma que se indica en el vector 1 del registro Rv2
@@ -30,8 +25,7 @@ add         Rn1, Rn1, 64            // Cambia la dirección para avanzar a los p
 cmp         Rn1, Rn2                // Verifica si ha llegado al dinal de la imagen
 bnq         _BuildHistogram          // Si no ha llegado al final entonces vuelve al loop, si sí ha llegado al final entonces vuelve al flujo normal
 _Normalize:
-divs_4x16   Rn4, Rn3                // Realiza la división del primer registro vectorial del histograma entre la cantidad total de pixeles
-muls_4x16   Rn4, Rn6                // Multiplica por la intensidad máxima
+norm        Rn4, Rn4                // Realiza la división del primer registro vectorial del histograma entre la cantidad total de pixeles
 inc         Rn4                     // Pasa a normalizar el siguiente registro del histograma
 cmp         Rn4, Rn5                // Verifica si ha recorrido todo el histograma
 bnq         _Normalize               // Si aún no los ha normalizado todos sigue en el loop, si sí entonces vuelve al flujo normal

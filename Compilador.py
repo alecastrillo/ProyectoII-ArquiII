@@ -17,13 +17,11 @@ instrucciones =  { #Diccionario con las 15 instrucciones a utilizar.
                 'bnq': '0101',
                 'load_8x8': '0110',
                 'store_8x8': '0111',
-                'divs_8x8': '1000',
-                'mods_8x8': '1001',
-                'inc_4x16': '1010',
-                'divs_4x16': '1011',
-                'muls_4x16': '1100',
-                'get_8x8': '1101',
-                'end': '1110'
+                'mods_8x8': '1000',
+                'inc_4x16': '1001',
+                'norm': '1010',
+                'get_8x8': '1011',
+                'end': '1100'
                 }
 
 def compilador(expresion):
@@ -88,27 +86,27 @@ def compilador(expresion):
             rvD = rvS = "0"
             rnD = rnSA = rnSB = "000"
             if(expresion[2] == "E"):
-                inm = bin(47)[2:]
+                inm = bin(41)[2:]
             else:
                 if(expresion[7] == "H"): #b_BuildHistrogram
-                    inm = bin(18)[2:]
+                    inm = bin(14)[2:]
                 elif(expresion[7] == "l"): #b_Normalize
-                    inm = bin(33)[2:]
+                    inm = bin(28)[2:]
                 else: #b_BuildImg
-                    inm = bin(39)[2:]
+                    inm = bin(33)[2:]
             inm = ((16-len(inm))*"0") + inm
         elif (comando == "bnq"):#b_BuildHistogram o bnq_BuildHistogram
             rvD = rvS = "0"
             rnD = rnSA = rnSB = "000"
             if(expresion[2] == "E"):
-                inm = bin(47)[2:]
+                inm = bin(41)[2:]
             else:
                 if(expresion[9] == "H"): #bnq_BuildHistrogram
-                    inm = bin(18)[2:]
+                    inm = bin(14)[2:]
                 elif(expresion[9] == "l"): #bnq_Normalize
-                    inm = bin(33)[2:]
+                    inm = bin(28)[2:]
                 else: #BuildImg
-                    inm = bin(39)[2:]
+                    inm = bin(33)[2:]
             inm = ((16-len(inm))*"0") + inm
         elif (comando == "load_8x8"):#load_8x8Rn1,Rv1
             rvD = "0" if expresion[12:15] == "Rv1" else "1"
@@ -122,7 +120,7 @@ def compilador(expresion):
             rnD = registros[expresion[9:12]]
             rnSA = rnSB = "000"
             inm = 16*"0"
-        elif (comando == "divs_8x8" or comando == "mods_8x8"):#divs_8x8Rv1,Rv0,4
+        elif (comando == "mods_8x8"):#divs_8x8Rv1,Rv0,4
             rvD = "0" if expresion[8:11] == "Rv1" else "1"
             rvS = "0" if expresion[12:15] == "Rv1" else "1"
             rnD = rnSA = rnSB = "000"
@@ -140,10 +138,10 @@ def compilador(expresion):
                 j = j+1
             inm = bin(int(expresion[12:j]))[2:]
             inm = ((16-len(inm))*"0") + inm
-        elif (comando == "divs_4x16" or comando == "muls_4x16"):#divs_4x16Rv1,Rn3
+        elif (comando == "norm"):#normRn4,Rn4
             rvD = rvS = "0"
-            rnD = registros[expresion[9:12]]
-            rnSA = registros[expresion[13:16]]
+            rnD = registros[expresion[4:7]]
+            rnSA = registros[expresion[8:11]]
             rnSB = "000"
             inm = 16*"0"
         else:#get_8x8Rv1,Rv2
