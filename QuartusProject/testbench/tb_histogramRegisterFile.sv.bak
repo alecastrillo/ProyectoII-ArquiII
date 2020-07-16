@@ -1,0 +1,32 @@
+module tb_histogramRegisterFile ();
+	logic clk,WE,GET8;
+	logic A1, A2;
+	logic [63:0] Rv, WD, RD;
+	
+	// Instantiate device to be tested 
+	histogramRegisterFile DUT(clk,WE,GET8,A1,A2,Rv,WD,RD);
+	
+	// Initialize test 
+	initial 
+		begin  
+			WE <= 0;
+			GET8 <= 1;
+		end
+	always  
+		begin 
+			clk <= 1; 
+			# 5; 
+			clk <= 0; 
+			# 5;
+		end
+	
+	always 
+		begin 
+			# 10; 
+			WE 							<= 0;
+			A1							 	<= 6'b0; 
+			A2							 	<= 6'b0; 
+			WD 							<= 0;
+		end
+
+endmodule 

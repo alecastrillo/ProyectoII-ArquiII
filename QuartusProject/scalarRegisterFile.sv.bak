@@ -1,0 +1,31 @@
+module scalarRegisterFile (input logic clk,WE,
+							input logic [2:0] first_source_register,
+							input logic [2:0] second_source_register,
+							input logic [2:0] destination_register,
+							input logic [16:0] WD,R7,
+							output logic [16:0] RD1,RD2);
+							
+	// Total of 8 registers 16 bits each
+	logic [16:0] scalar_register_memory [7:0];
+	logic [2:0] pos_R7 = 4'b111;
+	initial 
+		$readmemh("mem_scalarRegisters.dat",scalar_register_memory);
+	always_ff@(negedge clk)
+		// Writes in register when WriteEnable = True
+		if(WE)
+			scalar_register_memory[destination_register] = WD;
+	always_comb
+			begin
+				// If it's looking por PC register
+				if(first_source_register == pos_R7)
+					RD1 <= R7;
+				// Otherwise gives the register asked for
+				else
+					RD1 <= register_memory[first_source_register];
+				// If it's looking por PC registerC
+				if(second_source_register == pos_R15)
+					RD2 <= R15;
+				// Otherwise gives the register asked for
+				else
+					RD2 <= register_memory[second_source_register];
+endmodule

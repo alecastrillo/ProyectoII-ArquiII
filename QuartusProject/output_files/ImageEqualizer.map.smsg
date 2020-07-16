@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at dataMemory.sv(13): always construct contains both blocking and non-blocking assignments File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv Line: 13

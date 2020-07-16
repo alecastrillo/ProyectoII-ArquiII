@@ -1,0 +1,10 @@
+module PCREG(input logic clk,reset,
+				  input logic [15:0] PC_in,
+				  output logic [15:0] PC_out);
+	always_ff@(posedge clk, posedge reset)
+		if(reset)
+			PC_out <= 0;
+		else
+			PC_out <= PC_in;
+					
+endmodule 

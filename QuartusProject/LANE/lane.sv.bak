@@ -1,0 +1,27 @@
+module lane (input logic 			clk,
+				 input logic [2:0]	LaneControl, 	// 0 -> Size
+																// 1:2 -> OP
+				 input logic [1:0]	LaneId,			// 0, 1, 2 o 3
+				 input logic [15:0] 	V,					// Vector register 
+				 input logic [1:0]	Idx, 				// For one vector instructions (inc1)
+				 input logic [15:0] 	SrcB, 			// Scalar register or immediate 
+				 output logic [15:0] Res);				// Result
+	
+	// Initialize registers
+	initial  
+		begin
+			IdxFlag <= LaneId == Idx;
+		end
+		
+	logic IdxFlag;
+	logic [15:0] divs_res, inc_res, muls_res, mods_res;
+	IdxFlag <= LaneId == Idx;
+	
+	divs  DIVS (LaneControl[0], V, SrcB, divs_res;
+	inc   INC  (V, IdxFlag, inc_res);
+	muls  MULS (LaneControl[0], V, SrcB, muls_res);
+	mods  MODS (V, SrcB, mods_res);
+		
+	mux_LANE(divs_res, muls_res, inc_res, mods_res, LaneControl[2:1], Res);
+
+endmodule

@@ -1,0 +1,13 @@
+module mux_LANE (input logic [15:0] DIVS, INC, MULS, MODS,
+					  input logic [1:0] SELECTOR,
+					  output logic [16:0] RES);
+				 
+		always_comb
+			case(SELECTOR)
+				2'b00: OUT = DIVS;
+				2'b01: OUT = MULS;
+				2'b10: OUT = INC;
+				2'b11: OUT = MODS;
+			default: OUT = 1'b0;
+			endcase
+endmodule 

@@ -1,0 +1,11 @@
+module mux_ALU (input logic [15:0] ADD, INC,
+					  input logic SELECTOR,
+					  output logic [15:0] RES);
+				 
+		always_comb
+			case(SELECTOR)
+				1'b0: RES = ADD;
+				1'b1: RES = INC;
+			default: RES = 16'b0;
+			endcase
+endmodule 

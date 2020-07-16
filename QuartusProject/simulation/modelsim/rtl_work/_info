@@ -1,0 +1,855 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/simulation/modelsim
+vadd
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1594870098
+!i10b 1
+!s100 ?Hl;M82j1z>3^_o>Yd9CZ0
+I?Azn6?>d6M=^R5WcUQILT0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 add_sv_unit
+S1
+R0
+w1594627516
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/add.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/add.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1594870098.000000
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/add.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/add.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU
+Z8 tCvgOpt 0
+vadder
+R1
+R2
+!i10b 1
+!s100 5aY09DDO:YA=:3h1YU9dk0
+Iak^O@j8WW2AClCJAVHm1L3
+R3
+!s105 adder_sv_unit
+S1
+R0
+w1594855502
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/adder.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/adder.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/adder.sv|
+!i113 1
+R6
+Z9 !s92 -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject
+R8
+vALU
+R1
+R2
+!i10b 1
+!s100 VL[h`9R<N4YDf=2_O[cEK0
+I4jRa4YYdPfan`m<6dO6Z80
+R3
+!s105 ALU_sv_unit
+S1
+R0
+w1594868474
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv|
+!i113 1
+R6
+R7
+R8
+n@a@l@u
+vcmp
+R1
+R2
+!i10b 1
+!s100 7ZzD?WETT<mHZdbMVaO0M0
+IecDEo611g<`cDfhmidh`A0
+R3
+!s105 cmp_sv_unit
+S1
+R0
+w1594712309
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/cmp.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/cmp.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/cmp.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/cmp.sv|
+!i113 1
+R6
+R7
+R8
+vcontrolUnit
+R1
+R2
+!i10b 1
+!s100 ARLDc4^WIV0=<LXEfPY;E2
+IFaQ@eOe9V0:1KejTSGa4D0
+R3
+!s105 controlUnit_sv_unit
+S1
+R0
+w1594861041
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv|
+!i113 1
+R6
+R9
+R8
+ncontrol@unit
+vdataMemory
+R1
+Z10 !s110 1594870099
+!i10b 1
+!s100 c_`]U_3oMoWPHE1PQZCRE1
+IJ72PdX<iX6GIU?0<`BDVi0
+R3
+!s105 dataMemory_sv_unit
+S1
+R0
+w1594853430
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z11 !s108 1594870099.000000
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv|
+!i113 1
+R6
+R9
+R8
+ndata@memory
+vdecoder
+R1
+R2
+!i10b 1
+!s100 c_8mSQBN97Gj5L@eXmaH83
+IE=Y9=V??S6K=h4d:BYFiP0
+R3
+!s105 decoder_sv_unit
+S1
+R0
+w1594858358
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/decoder.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/decoder.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/decoder.sv|
+!i113 1
+R6
+R9
+R8
+vflags
+R1
+R2
+!i10b 1
+!s100 ;ZmmI]31O^Sc8WQkKYYkY3
+IokO9RmA<?dP1nE`2:K^]23
+R3
+!s105 flags_sv_unit
+S1
+R0
+w1594837161
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/flags.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/flags.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/flags.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/flags.sv|
+!i113 1
+R6
+R7
+R8
+vhistogramRegisterFile
+R1
+R10
+!i10b 1
+!s100 o`oiQW?`RB0i5[l_K4_=E1
+I?bPNM7WOWlO7R`VB3Ac2[3
+R3
+!s105 histogramRegisterFile_sv_unit
+S1
+R0
+w1594861393
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/histogramRegisterFile.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/histogramRegisterFile.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/histogramRegisterFile.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/histogramRegisterFile.sv|
+!i113 1
+R6
+R9
+R8
+nhistogram@register@file
+vinc
+R1
+R2
+!i10b 1
+!s100 daE]>bdo5TUI9z1bF[8Qd2
+I8O?gBQZ2UzGPJ?e_Kk9k92
+R3
+!s105 inc_sv_unit
+S1
+R0
+w1594711214
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/inc.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/inc.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/inc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/inc.sv|
+!i113 1
+R6
+Z12 !s92 -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE
+R8
+vinstructionMemory
+R1
+R10
+!i10b 1
+!s100 kFO2b8Yd`V<jCV=Mhb;kA0
+IS[KN[>1N7f^M@ZD`H0LbT1
+R3
+!s105 instructionMemory_sv_unit
+S1
+R0
+w1594858324
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv|
+!i113 1
+R6
+R9
+R8
+ninstruction@memory
+vlane
+R1
+R2
+!i10b 1
+!s100 m>df_bJ77dZa``WLG7hJ[3
+IOX:zT2:1`UVbF0d3>QGkb2
+R3
+!s105 lane_sv_unit
+S1
+R0
+w1594835986
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv|
+!i113 1
+R6
+R12
+R8
+vLANES
+R1
+R2
+!i10b 1
+!s100 kb5Xd<z8jBdmQ@E4Nd?PV0
+IzXa_5Y5He8Xz4J3K9@fDW2
+R3
+!s105 LANES_sv_unit
+S1
+R0
+w1594697271
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv|
+!i113 1
+R6
+R12
+R8
+n@l@a@n@e@s
+vls
+R1
+R2
+!i10b 1
+!s100 gDaLQJ_B=m@XlUOQLBS<K2
+I0YaH8i9Iz74egS?ef`noH3
+R3
+!s105 ls_sv_unit
+S1
+R0
+w1594834177
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/ls.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/ls.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/ls.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/ls.sv|
+!i113 1
+R6
+R12
+R8
+vmods
+R1
+R2
+!i10b 1
+!s100 aCh?VVcZNF@D84ooj=WTf2
+IE^5=UAACf8UEDU>UM8>m^1
+R3
+!s105 mods_sv_unit
+S1
+R0
+w1594711830
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv|
+!i113 1
+R6
+R12
+R8
+vmux_ALU
+R1
+R2
+!i10b 1
+!s100 ;?iNS@oh<2zCa_<fc;m_10
+IIb266@e[;CYW9bcJL@;]k0
+R3
+!s105 mux_ALU_sv_unit
+S1
+R0
+w1594868603
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/mux_ALU.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/mux_ALU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/mux_ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/mux_ALU.sv|
+!i113 1
+R6
+R7
+R8
+nmux_@a@l@u
+vmux_GET8
+R1
+R10
+!i10b 1
+!s100 ?]V8`P4LE7DVKU?:RI4z?2
+I7_77EH2SBP1@DdEAZ<iQS3
+R3
+!s105 mux_GET8_sv_unit
+S1
+R0
+w1594864813
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv|
+!i113 1
+R6
+R9
+R8
+nmux_@g@e@t8
+vmux_HSrc
+R1
+R10
+!i10b 1
+!s100 <6Q5a<NfaeC_OQP`9SL0J1
+IkQSL06<CX5jlj[LoMif1L3
+R3
+!s105 mux_HSrc_sv_unit
+S1
+R0
+w1594861931
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_HSrc.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_HSrc.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_HSrc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_HSrc.sv|
+!i113 1
+R6
+R9
+R8
+nmux_@h@src
+vmux_ImmSrc
+R1
+R10
+!i10b 1
+!s100 K6aOQe3zHgEE6F<^B9lhF1
+IF;N]]m2i5`9[bWU0[8:W`2
+R3
+!s105 mux_ImmSrc_sv_unit
+S1
+R0
+w1594866903
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv|
+!i113 1
+R6
+R9
+R8
+nmux_@imm@src
+vmux_LANE
+R1
+R2
+!i10b 1
+!s100 JR8Xf4b?d;>88lA^U;TFP0
+IoXh;JbRPPW5]4dH>RdPQ33
+R3
+!s105 mux_LANE_sv_unit
+S1
+R0
+w1594866674
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mux_LANE.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mux_LANE.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mux_LANE.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mux_LANE.sv|
+!i113 1
+R6
+R12
+R8
+nmux_@l@a@n@e
+vmux_pc
+R1
+R10
+!i10b 1
+!s100 I0MR74XKN5PL1:>BaEE`M2
+I^G5do?Ym4UIZo_oOghghh1
+R3
+!s105 mux_pc_sv_unit
+S1
+R0
+w1594866618
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_pc.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_pc.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_pc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_pc.sv|
+!i113 1
+R6
+R9
+R8
+vmux_vector
+R1
+R2
+!i10b 1
+!s100 XA^<lN7oAW8YYJ1kS:1N00
+IF9Vjmbo312WHIA>jfGG?a1
+R3
+!s105 mux_vector_sv_unit
+S1
+R0
+w1594731053
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_vector.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_vector.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_vector.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_vector.sv|
+!i113 1
+R6
+R9
+R8
+vmux_VorH
+R1
+R10
+!i10b 1
+!s100 jCa035NKYf472Qo[Q=Q9n3
+IQGXL]aVaMUOMD^58W4aN[3
+R3
+!s105 mux_VorH_sv_unit
+S1
+R0
+w1594862561
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_VorH.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_VorH.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_VorH.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_VorH.sv|
+!i113 1
+R6
+R9
+R8
+nmux_@vor@h
+vmux_WB
+R1
+R10
+!i10b 1
+!s100 ?_dRWe1JA0^hoDN?43C]61
+I839VU19l9o2F41eInk1lP2
+R3
+!s105 mux_WB_sv_unit
+S1
+R0
+w1594866720
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_WB.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_WB.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_WB.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_WB.sv|
+!i113 1
+R6
+R9
+R8
+nmux_@w@b
+vnorm
+R1
+R2
+!i10b 1
+!s100 NnGioJYQ5In?[NWlQJ80=2
+IRLVzS`5_cW3?LY3PHn>]>1
+R3
+!s105 norm_sv_unit
+S1
+R0
+w1594835990
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv|
+!i113 1
+R6
+R12
+R8
+vPCREG
+R1
+R2
+!i10b 1
+!s100 VLliCPbVWXBACM3XMVDPk1
+ISVeQVoSJI0SGRQ1WJdfTK3
+R3
+!s105 PCREG_sv_unit
+S1
+R0
+w1594866241
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/PCREG.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/PCREG.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/PCREG.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/PCREG.sv|
+!i113 1
+R6
+R9
+R8
+n@p@c@r@e@g
+vpipe_DtoE
+R1
+R10
+!i10b 1
+!s100 h:=HFZG2DZn^LKTKz;>G01
+InZQO]Vd_VO1MPH102H8dj2
+R3
+!s105 pipe_DtoE_sv_unit
+S1
+R0
+w1594863800
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_DtoE.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_DtoE.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_DtoE.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_DtoE.sv|
+!i113 1
+R6
+Z13 !s92 -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline
+R8
+npipe_@dto@e
+vpipe_EtoM
+R1
+R10
+!i10b 1
+!s100 z_9?ManTO5VSP^flXUCbF0
+I?Dl]Sob4bI0MDP_2:WSFW3
+R3
+!s105 pipe_EtoM_sv_unit
+S1
+R0
+w1594865679
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_EtoM.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_EtoM.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_EtoM.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_EtoM.sv|
+!i113 1
+R6
+R13
+R8
+npipe_@eto@m
+vpipe_FtoD
+R1
+R10
+!i10b 1
+!s100 A7Bjnz?X>Q17>Wll?^k7a2
+IS1><AdnfCkKJ3J]CTh`nJ0
+R3
+!s105 pipe_FtoD_sv_unit
+S1
+R0
+w1594857002
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_FtoD.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_FtoD.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_FtoD.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_FtoD.sv|
+!i113 1
+R6
+R13
+R8
+npipe_@fto@d
+vpipe_MtoW
+R1
+R10
+!i10b 1
+!s100 9>^S`Kh:mVF5gGR<e18`m3
+IL0[EHDiPo6;D8RTe_l7zV2
+R3
+!s105 pipe_MtoW_sv_unit
+S1
+R0
+w1594853030
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_MtoW.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_MtoW.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_MtoW.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_MtoW.sv|
+!i113 1
+R6
+R13
+R8
+npipe_@mto@w
+vpipeline
+R1
+R10
+!i10b 1
+!s100 GZZOW0m6HX7dJgE8SXi?I1
+IRk>SJO]O<Qj[JD1cT@8oO2
+R3
+!s105 pipeline_sv_unit
+S1
+R0
+w1594870073
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv|
+!i113 1
+R6
+R9
+R8
+vscalarRegisterFile
+R1
+R10
+!i10b 1
+!s100 ^fUF;d=RNRZz@7VBLP3Y;3
+IHGoTc55jEQeRmdC>I?<=72
+R3
+!s105 scalarRegisterFile_sv_unit
+S1
+R0
+w1594249042
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/scalarRegisterFile.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/scalarRegisterFile.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/scalarRegisterFile.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/scalarRegisterFile.sv|
+!i113 1
+R6
+R9
+R8
+nscalar@register@file
+vvectorRegisterFile
+R1
+R10
+!i10b 1
+!s100 8oU>KaB7fH`iPn9^8U[5M0
+IPcJ]@UmN5nKJ3>W7dhO=k1
+R3
+!s105 vectorRegisterFile_sv_unit
+S1
+R0
+w1594534555
+8/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv
+F/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject|/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv|
+!i113 1
+R6
+R9
+R8
+nvector@register@file

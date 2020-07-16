@@ -1,0 +1,40 @@
+module pipe_EtoM(input logic clk,
+						  input logic reset,
+						  input logic enable, Flush_M, // hazard unit 
+						  
+						  input logic PCSrc_E, ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E,
+						  input logic [15:0] ALUResult_E, 
+						  input logic [63:0] LanesResult_E,
+						  input logic [7:0] RhD_E,
+						  input logic RvD_E,
+						  input logic [2:0] RnD_E,
+						  
+						  output logic PCSrc_M, ScalarWrite_M, VectorWrite_M, HistogramWrite_M, MemtoReg_M, MemWrite_M,
+						  output logic [15:0] ALUResult_M, 
+						  output logic [63:0] LanesResult_M,
+						  output logic [7:0] RhD_M,
+						  output logic RvD_M,
+						  output logic [2:0] RnD_M,);
+
+	// Registro entre Fetch y Decode
+	always_ff @( posedge clk, posedge reset )
+		begin
+			//como siempre, al ser un flipflop, si hay un reset se resetea en 0
+			if (reset)
+				InstrD <= 0;
+			else
+				//si el reset no esta activado seguimos normalmente
+				begin
+					//Si el hazardUnit nos esta diciendo que hagamos un flush
+					if (FlushD)
+						//devolvemos una cadena de 32 0s
+						InstrD <= 0;
+					//si en cambio, el StallD esta en 0, entonces al estar negada la entrada nos da un 1, por lo que damos como resultado 
+					//la instruccion de entrada 
+					else if (enable)
+						InstrD <= InstrF;
+			end
+		end
+endmodule 
+						  
+endmodule 
