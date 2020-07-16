@@ -1,6 +1,6 @@
 Analysis & Elaboration report for ImageEqualizer
-Wed Jul 15 21:28:13 2020
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Wed Jul 15 23:14:50 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -9,25 +9,29 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "mux_WB:mux_WB"
-  6. Port Connectivity Checks: "pipe_MtoW:pipe_MtoW"
-  7. Port Connectivity Checks: "LANES:LANES|lane:lane0"
-  8. Port Connectivity Checks: "LANES:LANES|lane:lane1"
-  9. Port Connectivity Checks: "LANES:LANES|lane:lane2"
- 10. Port Connectivity Checks: "LANES:LANES|lane:lane3"
- 11. Port Connectivity Checks: "ALU:ALU|flags:flags_F"
- 12. Port Connectivity Checks: "ALU:ALU|add:INC"
- 13. Port Connectivity Checks: "ALU:ALU|add:ADD"
- 14. Port Connectivity Checks: "ALU:ALU"
- 15. Port Connectivity Checks: "pipe_DtoE:pipe_DtoE"
- 16. Port Connectivity Checks: "controlUnit:controlUnit"
- 17. Port Connectivity Checks: "decoder:decoder"
- 18. Port Connectivity Checks: "adder:adder"
- 19. Port Connectivity Checks: "PCREG:PCREG"
- 20. Port Connectivity Checks: "mux_pc:mux_pc"
- 21. Analysis & Elaboration Messages
- 22. Analysis & Elaboration Suppressed Messages
+  4. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller
+  5. Analysis & Elaboration Settings
+  6. Port Connectivity Checks: "mux_WB:mux_WB"
+  7. Port Connectivity Checks: "pipe_MtoW:pipe_MtoW"
+  8. Port Connectivity Checks: "dataMemory:dataMemory"
+  9. Port Connectivity Checks: "LANES:LANES|lane:lane0"
+ 10. Port Connectivity Checks: "LANES:LANES|lane:lane1"
+ 11. Port Connectivity Checks: "LANES:LANES|lane:lane2"
+ 12. Port Connectivity Checks: "LANES:LANES|lane:lane3"
+ 13. Port Connectivity Checks: "ALU:ALU|flags:flags_F"
+ 14. Port Connectivity Checks: "ALU:ALU|add:INC"
+ 15. Port Connectivity Checks: "ALU:ALU|add:ADD"
+ 16. Port Connectivity Checks: "ALU:ALU"
+ 17. Port Connectivity Checks: "pipe_DtoE:pipe_DtoE"
+ 18. Port Connectivity Checks: "controlUnit:controlUnit"
+ 19. Port Connectivity Checks: "decoder:decoder"
+ 20. Port Connectivity Checks: "adder:adder"
+ 21. Port Connectivity Checks: "mux_pc:mux_pc"
+ 22. Port Connectivity Checks: "image_reader:image_reader"
+ 23. Port Connectivity Checks: "VGA_Controller:VGA_Controller"
+ 24. Port Connectivity Checks: "freq_divider:freq_divider"
+ 25. Analysis & Elaboration Messages
+ 26. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -53,8 +57,8 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Jul 15 21:28:13 2020       ;
-; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Analysis & Elaboration Status ; Successful - Wed Jul 15 23:14:50 2020       ;
+; Quartus Prime Version         ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                 ; ImageEqualizer                              ;
 ; Top-level Entity Name         ; pipeline                                    ;
 ; Family                        ; Cyclone V                                   ;
@@ -82,6 +86,25 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; HDISPLAY       ; 635   ; Signed Integer                                    ;
+; HFRONT         ; 15    ; Signed Integer                                    ;
+; HBACK          ; 48    ; Signed Integer                                    ;
+; HSYNC          ; 95    ; Signed Integer                                    ;
+; HMAX           ; 793   ; Signed Integer                                    ;
+; VDISPLAY       ; 480   ; Signed Integer                                    ;
+; VFRONT         ; 10    ; Signed Integer                                    ;
+; VBACK          ; 33    ; Signed Integer                                    ;
+; VSYNC          ; 2     ; Signed Integer                                    ;
+; VMAX           ; 525   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -190,6 +213,16 @@ refer to the applicable agreement for further details.
 ; RvD_W         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                ;
 ; RnD_W         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                ;
 +---------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataMemory:dataMemory"                                                                                                                                                                        ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; writeEnableB     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; writeEnableB[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------+
@@ -311,15 +344,6 @@ refer to the applicable agreement for further details.
 +----------+-------+----------+--------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "PCREG:PCREG" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; clk  ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
-
-
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "mux_pc:mux_pc"                                                                                                                                             ;
 +-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -331,176 +355,239 @@ refer to the applicable agreement for further details.
 +-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_reader:image_reader"                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; R    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; G    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Controller:VGA_Controller"                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; HSync ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; VSync ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Blank ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "freq_divider:freq_divider" ;
++----------+-------+----------+-------------------------+
+; Port     ; Type  ; Severity ; Details                 ;
++----------+-------+----------+-------------------------+
+; clk_FPGA ; Input ; Info     ; Stuck at GND            ;
++----------+-------+----------+-------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jul 15 21:28:01 2020
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Wed Jul 15 23:14:34 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ImageEqualizer -c ImageEqualizer --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/ls.sv
-    Info (12023): Found entity 1: ls File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/ls.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/norm.sv
-    Info (12023): Found entity 1: norm File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file dataMemory.sv
-    Info (12023): Found entity 1: dataMemory File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vectorRegisterFile.sv
-    Info (12023): Found entity 1: vectorRegisterFile File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file instructionMemory.sv
-    Info (12023): Found entity 1: instructionMemory File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file image_reader.sv
+    Info (12023): Found entity 1: image_reader File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.sv
+    Info (12023): Found entity 1: VGA_Controller File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file freq_divider.sv
+    Info (12023): Found entity 1: freq_divider File: C:/Users/juanp/Desktop/QuartusProject/freq_divider.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/ls.sv
+    Info (12023): Found entity 1: ls File: C:/Users/juanp/Desktop/QuartusProject/LANE/ls.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/norm.sv
+    Info (12023): Found entity 1: norm File: C:/Users/juanp/Desktop/QuartusProject/LANE/norm.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datamemory.sv
+    Info (12023): Found entity 1: dataMemory File: C:/Users/juanp/Desktop/QuartusProject/dataMemory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vectorregisterfile.sv
+    Info (12023): Found entity 1: vectorRegisterFile File: C:/Users/juanp/Desktop/QuartusProject/vectorRegisterFile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory.sv
+    Info (12023): Found entity 1: instructionMemory File: C:/Users/juanp/Desktop/QuartusProject/instructionMemory.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file adder.sv
-    Info (12023): Found entity 1: adder File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/adder.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file scalarRegisterFile.sv
-    Info (12023): Found entity 1: scalarRegisterFile File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/scalarRegisterFile.sv Line: 1
+    Info (12023): Found entity 1: adder File: C:/Users/juanp/Desktop/QuartusProject/adder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file scalarregisterfile.sv
+    Info (12023): Found entity 1: scalarRegisterFile File: C:/Users/juanp/Desktop/QuartusProject/scalarRegisterFile.sv Line: 1
 Warning (12019): Can't analyze file -- file simulation/modelsim/vectorRegisterFile.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file histogramRegisterFile.sv
-    Info (12023): Found entity 1: histogramRegisterFile File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/histogramRegisterFile.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/inc.sv
-    Info (12023): Found entity 1: inc File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/inc.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/mods.sv
-    Info (12023): Found entity 1: mods File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/mux_LANE.sv
-    Info (12023): Found entity 1: mux_LANE File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mux_LANE.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/lane.sv
-    Info (12023): Found entity 1: lane File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file LANE/LANES.sv
-    Info (12023): Found entity 1: LANES File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ALU/add.sv
-    Info (12023): Found entity 1: add File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/add.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ALU/cmp.sv
-    Info (12023): Found entity 1: cmp File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/cmp.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ALU/mux_ALU.sv
-    Info (12023): Found entity 1: mux_ALU File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/mux_ALU.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ALU/ALU.sv
-    Info (12023): Found entity 1: ALU File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ALU/flags.sv
-    Info (12023): Found entity 1: flags File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/flags.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file histogramregisterfile.sv
+    Info (12023): Found entity 1: histogramRegisterFile File: C:/Users/juanp/Desktop/QuartusProject/histogramRegisterFile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/inc.sv
+    Info (12023): Found entity 1: inc File: C:/Users/juanp/Desktop/QuartusProject/LANE/inc.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/mods.sv
+    Info (12023): Found entity 1: mods File: C:/Users/juanp/Desktop/QuartusProject/LANE/mods.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/mux_lane.sv
+    Info (12023): Found entity 1: mux_LANE File: C:/Users/juanp/Desktop/QuartusProject/LANE/mux_LANE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/lane.sv
+    Info (12023): Found entity 1: lane File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lane/lanes.sv
+    Info (12023): Found entity 1: LANES File: C:/Users/juanp/Desktop/QuartusProject/LANE/LANES.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/add.sv
+    Info (12023): Found entity 1: add File: C:/Users/juanp/Desktop/QuartusProject/ALU/add.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/cmp.sv
+    Info (12023): Found entity 1: cmp File: C:/Users/juanp/Desktop/QuartusProject/ALU/cmp.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/mux_alu.sv
+    Info (12023): Found entity 1: mux_ALU File: C:/Users/juanp/Desktop/QuartusProject/ALU/mux_ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/alu.sv
+    Info (12023): Found entity 1: ALU File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/flags.sv
+    Info (12023): Found entity 1: flags File: C:/Users/juanp/Desktop/QuartusProject/ALU/flags.sv Line: 1
 Warning (12019): Can't analyze file -- file ALU/tb_ALU.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file controlUnit.sv
-    Info (12023): Found entity 1: controlUnit File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controlunit.sv
+    Info (12023): Found entity 1: controlUnit File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decoder.sv
-    Info (12023): Found entity 1: decoder File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/decoder.sv Line: 1
+    Info (12023): Found entity 1: decoder File: C:/Users/juanp/Desktop/QuartusProject/decoder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux_vector.sv
-    Info (12023): Found entity 1: mux_vector File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_vector.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file PCREG.sv
-    Info (12023): Found entity 1: PCREG File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/PCREG.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_FtoD.sv
-    Info (12023): Found entity 1: pipe_FtoD File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_FtoD.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_DtoE.sv
-    Info (12023): Found entity 1: pipe_DtoE File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_DtoE.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_EtoM.sv
-    Info (12023): Found entity 1: pipe_EtoM File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_EtoM.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_MtoW.sv
-    Info (12023): Found entity 1: pipe_MtoW File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline/pipe_MtoW.sv Line: 1
+    Info (12023): Found entity 1: mux_vector File: C:/Users/juanp/Desktop/QuartusProject/mux_vector.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pcreg.sv
+    Info (12023): Found entity 1: PCREG File: C:/Users/juanp/Desktop/QuartusProject/PCREG.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_ftod.sv
+    Info (12023): Found entity 1: pipe_FtoD File: C:/Users/juanp/Desktop/QuartusProject/pipeline/pipe_FtoD.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_dtoe.sv
+    Info (12023): Found entity 1: pipe_DtoE File: C:/Users/juanp/Desktop/QuartusProject/pipeline/pipe_DtoE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_etom.sv
+    Info (12023): Found entity 1: pipe_EtoM File: C:/Users/juanp/Desktop/QuartusProject/pipeline/pipe_EtoM.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipeline/pipe_mtow.sv
+    Info (12023): Found entity 1: pipe_MtoW File: C:/Users/juanp/Desktop/QuartusProject/pipeline/pipe_MtoW.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux_pc.sv
-    Info (12023): Found entity 1: mux_pc File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_pc.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_WB.sv
-    Info (12023): Found entity 1: mux_WB File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_WB.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_VorH.sv
-    Info (12023): Found entity 1: mux_VorH File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_VorH.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_HSrc.sv
-    Info (12023): Found entity 1: mux_HSrc File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_HSrc.sv Line: 1
+    Info (12023): Found entity 1: mux_pc File: C:/Users/juanp/Desktop/QuartusProject/mux_pc.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_wb.sv
+    Info (12023): Found entity 1: mux_WB File: C:/Users/juanp/Desktop/QuartusProject/mux_WB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_vorh.sv
+    Info (12023): Found entity 1: mux_VorH File: C:/Users/juanp/Desktop/QuartusProject/mux_VorH.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_hsrc.sv
+    Info (12023): Found entity 1: mux_HSrc File: C:/Users/juanp/Desktop/QuartusProject/mux_HSrc.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline.sv
-    Info (12023): Found entity 1: pipeline File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_ImmSrc.sv
-    Info (12023): Found entity 1: mux_ImmSrc File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux_GET8.sv
-    Info (12023): Found entity 1: mux_GET8 File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at ALU.sv(34): created implicit net for "suma_R" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 34
-Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(84): created implicit net for "FlushE" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 84
-Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(86): created implicit net for "FlagsW_D" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 86
-Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(114): created implicit net for "FlushW" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 114
-Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(118): created implicit net for "DataFromMem_W" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 118
+    Info (12023): Found entity 1: pipeline File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_immsrc.sv
+    Info (12023): Found entity 1: mux_ImmSrc File: C:/Users/juanp/Desktop/QuartusProject/mux_ImmSrc.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_get8.sv
+    Info (12023): Found entity 1: mux_GET8 File: C:/Users/juanp/Desktop/QuartusProject/mux_GET8.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hazardunit.sv
+    Info (12023): Found entity 1: hazardUnit File: C:/Users/juanp/Desktop/QuartusProject/hazardUnit.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at ALU.sv(34): created implicit net for "suma_R" File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(61): created implicit net for "clk_FPGA" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 61
+Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(101): created implicit net for "FlushE" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 101
+Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(103): created implicit net for "FlagsW_D" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 103
+Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(131): created implicit net for "FlushW" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 131
+Warning (10236): Verilog HDL Implicit Net warning at pipeline.sv(135): created implicit net for "DataFromMem_W" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 135
 Info (12127): Elaborating entity "pipeline" for the top level hierarchy
-Info (12128): Elaborating entity "mux_pc" for hierarchy "mux_pc:mux_pc" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 51
-Info (12128): Elaborating entity "PCREG" for hierarchy "PCREG:PCREG" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 53
-Info (12128): Elaborating entity "adder" for hierarchy "adder:adder" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 55
-Info (12128): Elaborating entity "instructionMemory" for hierarchy "instructionMemory:instructionMemory" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 57
-Warning (10850): Verilog HDL warning at instructionMemory.sv(8): number of words (36) in memory file does not match the number of elements in the address range [0:63] File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv Line: 8
-Warning (10030): Net "memory.data_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv Line: 5
-Warning (10030): Net "memory.waddr_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv Line: 5
-Warning (10030): Net "memory.we_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv Line: 5
-Info (12128): Elaborating entity "pipe_FtoD" for hierarchy "pipe_FtoD:pipe_FtoD" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 60
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 66
-Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:controlUnit" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 69
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(22): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(39): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 39
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(56): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 56
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(73): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 73
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(90): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 90
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(107): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 107
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(124): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 124
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(141): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 141
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(158): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 158
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(175): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 175
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(192): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 192
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(209): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 209
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(226): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 226
-Warning (10230): Verilog HDL assignment warning at controlUnit.sv(243): truncated value with size 3 to match size of target (2) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/controlUnit.sv Line: 243
-Info (12128): Elaborating entity "scalarRegisterFile" for hierarchy "scalarRegisterFile:scalarRegisterFile" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 71
-Info (12128): Elaborating entity "vectorRegisterFile" for hierarchy "vectorRegisterFile:vectorRegisterFile" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 73
-Info (12128): Elaborating entity "mux_vector" for hierarchy "mux_vector:mux_vector" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 75
-Info (12128): Elaborating entity "mux_HSrc" for hierarchy "mux_HSrc:mux_HSrc" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 77
-Info (12128): Elaborating entity "histogramRegisterFile" for hierarchy "histogramRegisterFile:histogramRegisterFile" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 79
+Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:freq_divider" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 59
+Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA_Controller" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(30): truncated value with size 32 to match size of target (10) File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(33): truncated value with size 32 to match size of target (10) File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(46): truncated value with size 32 to match size of target (10) File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 46
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(52): truncated value with size 32 to match size of target (10) File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 52
+Info (12128): Elaborating entity "image_reader" for hierarchy "image_reader:image_reader" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at image_reader.sv(45): truncated value with size 32 to match size of target (4) File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at image_reader.sv(59): truncated value with size 32 to match size of target (16) File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at image_reader.sv(60): truncated value with size 32 to match size of target (16) File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at image_reader.sv(61): truncated value with size 32 to match size of target (16) File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 61
+Info (12128): Elaborating entity "mux_pc" for hierarchy "mux_pc:mux_pc" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 68
+Info (12128): Elaborating entity "PCREG" for hierarchy "PCREG:PCREG" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 70
+Info (12128): Elaborating entity "adder" for hierarchy "adder:adder" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 72
+Info (12128): Elaborating entity "instructionMemory" for hierarchy "instructionMemory:instructionMemory" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 74
+Warning (10850): Verilog HDL warning at instructionMemory.sv(8): number of words (36) in memory file does not match the number of elements in the address range [0:63] File: C:/Users/juanp/Desktop/QuartusProject/instructionMemory.sv Line: 8
+Warning (10030): Net "memory.data_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/juanp/Desktop/QuartusProject/instructionMemory.sv Line: 5
+Warning (10030): Net "memory.waddr_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/juanp/Desktop/QuartusProject/instructionMemory.sv Line: 5
+Warning (10030): Net "memory.we_a" at instructionMemory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/juanp/Desktop/QuartusProject/instructionMemory.sv Line: 5
+Info (12128): Elaborating entity "pipe_FtoD" for hierarchy "pipe_FtoD:pipe_FtoD" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 77
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 83
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:controlUnit" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 86
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(22): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(39): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(56): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(73): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 73
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(90): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 90
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(107): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 107
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(124): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 124
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(141): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 141
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(158): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 158
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(175): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 175
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(192): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 192
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(209): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 209
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(226): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 226
+Warning (10230): Verilog HDL assignment warning at controlUnit.sv(243): truncated value with size 3 to match size of target (2) File: C:/Users/juanp/Desktop/QuartusProject/controlUnit.sv Line: 243
+Info (12128): Elaborating entity "scalarRegisterFile" for hierarchy "scalarRegisterFile:scalarRegisterFile" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 88
+Info (12128): Elaborating entity "vectorRegisterFile" for hierarchy "vectorRegisterFile:vectorRegisterFile" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 90
+Info (12128): Elaborating entity "mux_vector" for hierarchy "mux_vector:mux_vector" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 92
+Info (12128): Elaborating entity "mux_HSrc" for hierarchy "mux_HSrc:mux_HSrc" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 94
+Info (12128): Elaborating entity "histogramRegisterFile" for hierarchy "histogramRegisterFile:histogramRegisterFile" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 96
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "histogram_register_memory" into its bus
-Info (12128): Elaborating entity "mux_VorH" for hierarchy "mux_VorH:mux_VorH" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 81
-Info (12128): Elaborating entity "pipe_DtoE" for hierarchy "pipe_DtoE:pipe_DtoE" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 88
-Info (12128): Elaborating entity "mux_ImmSrc" for hierarchy "mux_ImmSrc:mux_ImmSrc" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 93
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 95
-Warning (10036): Verilog HDL or VHDL warning at ALU.sv(22): object "ls_res" assigned a value but never read File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 22
-Info (12128): Elaborating entity "add" for hierarchy "ALU:ALU|add:ADD" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 24
-Info (12128): Elaborating entity "cmp" for hierarchy "ALU:ALU|cmp:CMP" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 26
-Info (12128): Elaborating entity "mux_ALU" for hierarchy "ALU:ALU|mux_ALU:mux_ALU" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 31
-Info (12128): Elaborating entity "flags" for hierarchy "ALU:ALU|flags:flags_F" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/ALU/ALU.sv Line: 34
-Info (12128): Elaborating entity "LANES" for hierarchy "LANES:LANES" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 97
-Info (12128): Elaborating entity "lane" for hierarchy "LANES:LANES|lane:lane3" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/LANES.sv Line: 8
-Warning (10036): Verilog HDL or VHDL warning at lane.sv(10): object "IdxFlag" assigned a value but never read File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 10
-Info (12128): Elaborating entity "norm" for hierarchy "LANES:LANES|lane:lane3|norm:NORM" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 18
-Warning (10230): Verilog HDL assignment warning at norm.sv(5): truncated value with size 32 to match size of target (16) File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/norm.sv Line: 5
-Info (12128): Elaborating entity "inc" for hierarchy "LANES:LANES|lane:lane3|inc:INC" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 19
-Info (12128): Elaborating entity "ls" for hierarchy "LANES:LANES|lane:lane3|ls:LS" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 20
-Info (12128): Elaborating entity "mods" for hierarchy "LANES:LANES|lane:lane3|mods:MODS" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 21
-Warning (10036): Verilog HDL or VHDL warning at mods.sv(5): object "tmp" assigned a value but never read File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/mods.sv Line: 5
-Info (12128): Elaborating entity "mux_LANE" for hierarchy "LANES:LANES|lane:lane3|mux_LANE:mux_lane" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/LANE/lane.sv Line: 23
-Info (12128): Elaborating entity "mux_GET8" for hierarchy "mux_GET8:mux_GET8" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 99
-Info (12128): Elaborating entity "pipe_EtoM" for hierarchy "pipe_EtoM:pipe_EtoM" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 106
-Info (12128): Elaborating entity "dataMemory" for hierarchy "dataMemory:dataMemory" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 111
-Warning (10850): Verilog HDL warning at dataMemory.sv(10): number of words (24576) in memory file does not match the number of elements in the address range [0:49151] File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv Line: 10
-Info (12128): Elaborating entity "pipe_MtoW" for hierarchy "pipe_MtoW:pipe_MtoW" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 118
-Info (12128): Elaborating entity "mux_WB" for hierarchy "mux_WB:mux_WB" File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 123
+Info (12128): Elaborating entity "mux_VorH" for hierarchy "mux_VorH:mux_VorH" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 98
+Info (12128): Elaborating entity "pipe_DtoE" for hierarchy "pipe_DtoE:pipe_DtoE" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 105
+Info (12128): Elaborating entity "mux_ImmSrc" for hierarchy "mux_ImmSrc:mux_ImmSrc" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 110
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 112
+Warning (10036): Verilog HDL or VHDL warning at ALU.sv(22): object "ls_res" assigned a value but never read File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 22
+Info (12128): Elaborating entity "add" for hierarchy "ALU:ALU|add:ADD" File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 24
+Info (12128): Elaborating entity "cmp" for hierarchy "ALU:ALU|cmp:CMP" File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 26
+Info (12128): Elaborating entity "mux_ALU" for hierarchy "ALU:ALU|mux_ALU:mux_ALU" File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 31
+Info (12128): Elaborating entity "flags" for hierarchy "ALU:ALU|flags:flags_F" File: C:/Users/juanp/Desktop/QuartusProject/ALU/ALU.sv Line: 34
+Info (12128): Elaborating entity "LANES" for hierarchy "LANES:LANES" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 114
+Info (12128): Elaborating entity "lane" for hierarchy "LANES:LANES|lane:lane3" File: C:/Users/juanp/Desktop/QuartusProject/LANE/LANES.sv Line: 8
+Warning (10036): Verilog HDL or VHDL warning at lane.sv(10): object "IdxFlag" assigned a value but never read File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 10
+Info (12128): Elaborating entity "norm" for hierarchy "LANES:LANES|lane:lane3|norm:NORM" File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 18
+Warning (10230): Verilog HDL assignment warning at norm.sv(5): truncated value with size 32 to match size of target (16) File: C:/Users/juanp/Desktop/QuartusProject/LANE/norm.sv Line: 5
+Info (12128): Elaborating entity "inc" for hierarchy "LANES:LANES|lane:lane3|inc:INC" File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 19
+Info (12128): Elaborating entity "ls" for hierarchy "LANES:LANES|lane:lane3|ls:LS" File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 20
+Info (12128): Elaborating entity "mods" for hierarchy "LANES:LANES|lane:lane3|mods:MODS" File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 21
+Warning (10036): Verilog HDL or VHDL warning at mods.sv(5): object "tmp" assigned a value but never read File: C:/Users/juanp/Desktop/QuartusProject/LANE/mods.sv Line: 5
+Info (12128): Elaborating entity "mux_LANE" for hierarchy "LANES:LANES|lane:lane3|mux_LANE:mux_lane" File: C:/Users/juanp/Desktop/QuartusProject/LANE/lane.sv Line: 23
+Info (12128): Elaborating entity "mux_GET8" for hierarchy "mux_GET8:mux_GET8" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 116
+Info (12128): Elaborating entity "pipe_EtoM" for hierarchy "pipe_EtoM:pipe_EtoM" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 123
+Info (12128): Elaborating entity "dataMemory" for hierarchy "dataMemory:dataMemory" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 128
+Warning (10850): Verilog HDL warning at dataMemory.sv(19): number of words (24576) in memory file does not match the number of elements in the address range [0:49151] File: C:/Users/juanp/Desktop/QuartusProject/dataMemory.sv Line: 19
+Info (12128): Elaborating entity "pipe_MtoW" for hierarchy "pipe_MtoW:pipe_MtoW" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 135
+Info (12128): Elaborating entity "mux_WB" for hierarchy "mux_WB:mux_WB" File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 140
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "reset" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 3
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
-    Warning (12110): Net "enable" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 9
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 3
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "enable" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 9
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "reset" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 3
-    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 5
-    Warning (12110): Net "enable" is missing source, defaulting to GND File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv Line: 9
-Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (144001): Generated suppressed messages file /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/output_files/ImageEqualizer.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 1289 megabytes
-    Info: Processing ended: Wed Jul 15 21:28:13 2020
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 3
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "enable" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 3
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "enable" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 3
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "enable" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 3
+    Warning (12110): Net "ALUControl_D[2]" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 5
+    Warning (12110): Net "enable" is missing source, defaulting to GND File: C:/Users/juanp/Desktop/QuartusProject/pipeline.sv Line: 9
+Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/juanp/Desktop/QuartusProject/output_files/ImageEqualizer.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Wed Jul 15 23:14:50 2020
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:34
 
 
 +--------------------------------------------+
 ; Analysis & Elaboration Suppressed Messages ;
 +--------------------------------------------+
-The suppressed messages can be found in /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/output_files/ImageEqualizer.map.smsg.
+The suppressed messages can be found in C:/Users/juanp/Desktop/QuartusProject/output_files/ImageEqualizer.map.smsg.
 
 

@@ -1,6 +1,6 @@
 Flow report for ImageEqualizer
-Wed Jul 15 21:28:13 2020
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Wed Jul 15 23:14:50 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -40,8 +40,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Wed Jul 15 21:28:13 2020       ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Flow Status                 ; Successful - Wed Jul 15 23:14:50 2020       ;
+; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name               ; ImageEqualizer                              ;
 ; Top-level Entity Name       ; pipeline                                    ;
 ; Family                      ; Cyclone V                                   ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/15/2020 21:28:01 ;
+; Start date & time ; 07/15/2020 23:14:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ImageEqualizer      ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+----------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 163164132250840.159487008110625        ; --             ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 44530822063461.159487647508356         ; --             ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --             ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>         ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --             ; --          ; eda_simulation ;
@@ -94,18 +94,18 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:12     ; 1.0                     ; 1289 MB             ; 00:00:28                           ;
-; Total                  ; 00:00:12     ; --                      ; --                  ; 00:00:28                           ;
+; Analysis & Elaboration ; 00:00:16     ; 1.0                     ; 4805 MB             ; 00:00:34                           ;
+; Total                  ; 00:00:16     ; --                      ; --                  ; 00:00:34                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+------------------------+------------------+----------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+------------------------+------------------+----------------+------------+----------------+
-; Analysis & Elaboration ; elitebook-840    ; Ubuntu 16.04.6 ; 16         ; x86_64         ;
-+------------------------+------------------+----------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; LAPTOP-VAIO      ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------

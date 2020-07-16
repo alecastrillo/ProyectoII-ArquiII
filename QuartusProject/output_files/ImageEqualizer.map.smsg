@@ -1,1 +1,5 @@
-Warning (10268): Verilog HDL information at dataMemory.sv(13): always construct contains both blocking and non-blocking assignments File: /home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv Line: 13
+Warning (10268): Verilog HDL information at image_reader.sv(32): always construct contains both blocking and non-blocking assignments File: C:/Users/juanp/Desktop/QuartusProject/image_reader.sv Line: 32
+Info (10281): Verilog HDL Declaration information at VGA_Controller.sv(4): object "HSync" differs only in case from object "HSYNC" in the same scope File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 4
+Info (10281): Verilog HDL Declaration information at VGA_Controller.sv(4): object "VSync" differs only in case from object "VSYNC" in the same scope File: C:/Users/juanp/Desktop/QuartusProject/VGA_Controller.sv Line: 4
+Warning (10268): Verilog HDL information at dataMemory.sv(22): always construct contains both blocking and non-blocking assignments File: C:/Users/juanp/Desktop/QuartusProject/dataMemory.sv Line: 22
+Warning (10268): Verilog HDL information at dataMemory.sv(31): always construct contains both blocking and non-blocking assignments File: C:/Users/juanp/Desktop/QuartusProject/dataMemory.sv Line: 31
