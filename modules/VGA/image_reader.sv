@@ -56,9 +56,9 @@ module image_reader(clk_FPGA, clk_VGA, x, y, R, G, B, addressB, outB, channel);
 	 */
 	always_ff @(posedge clk_FPGA) begin	
 		case(channel)
-			2'b00: addressB = (y*256 + x) / 8;
-			2'b01: addressB = ((y*256 + x) / 8) + 8192;
-			2'b10: addressB = ((y*256 + x) / 8) + 16384;
+			2'b00: addressB = ((y*256 + x) / 8) + 24576; //Red 
+			2'b01: addressB = ((y*256 + x) / 8) + 32768; //Green
+			2'b10: addressB = ((y*256 + x) / 8) + 40960; //Blue
 		endcase
 	end
 	
