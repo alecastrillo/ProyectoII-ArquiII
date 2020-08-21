@@ -1,6 +1,6 @@
 module pipeline();
 	
-	logic clk, reset;
+	logic clk, clk_VGA, reset;
 	logic GET8_D, PCSrc_D, ScalarWrite_D, VectorWrite_D, HistogramWrite_D, MemtoReg_D, MemWrite_D, Branch_D,HistSrc_D, FlagWrite_D, ImmSrc_D, VectorOrHistogram_D;
 	logic [2:0] ALUControl_D, LaneControl_D;
 	logic [15:0] PC, PCPlus4, PC_IN, Imm;
@@ -55,6 +55,23 @@ module pipeline();
 													ScalarWrite_E, ScalarWrite_M, ScalarWrite_W,VectorWrite_E,VectorWrite_M, VectorWrite_W,HistogramWrite_E,HistogramWrite_M,HistogramWrite_W,
 													RvD_E, RvD_M, RvD_W, RvS,  		RnD_E, RnD_M, RnD_W, RnSA, RnSB,   			RhD_E, RhD_M, RhD_W, RhD,  
 													stall_D, stall_F,stall_E, Flush_D,Flush_E, match);
+	
+	//VGA
+	logic HSync, VSync, Blank, Sync;
+	logic [9:0] x, y;
+	logic [7:0] R, G, B;
+	logic [1:0] channel;
+	logic [15:0] addressB;
+	logic [63:0] outB;
+	logic [63:0] inputDataB;
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////// VGA ///////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	freq_divider freq_divider(clk, clk_VGA);
+	VGA_Controller VGA_Controller(clk_VGA, HSync, VSync, Blank, x, y);
+	image_reader image_reader(clk_FPGA, clk_VGA, x, y, R, G, B, addressB, outB, channel);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////// FETCH ///////////////////////////////////////////////////////////////
