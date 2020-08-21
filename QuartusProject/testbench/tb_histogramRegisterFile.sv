@@ -15,7 +15,7 @@ module tb_histogramRegisterFile ();
 		begin 
 			clk <= 1; 
 			# 5; 
-			clk <= 0; 
+			clk <= 0;  
 			# 5;
 		end
 	

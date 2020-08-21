@@ -6,7 +6,7 @@ module pipeline();
 	logic [15:0] PC, PCPlus4, PC_IN, Imm;
 	logic [31:0] InstrF;
 	
-	logic enable, enable_FtoD, FlushD, cond;
+	logic enable, enable_FtoD, cond;
 	logic [3:0] op;
 	logic RvD, RvS;
 	logic [2:0] RnD, RnSA, RnSB;
@@ -16,6 +16,7 @@ module pipeline();
 	logic [63:0] RhD_HRF, RvD_VRF, RvDA_D;
 	
 	logic GET8_E, PCSrc_E, ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E, Branch_E, FlagsW_E, FlagWrite_E, ImmSrc_E;
+	logic [4:0] Flags_D, Flags_E;
 	logic [15:0] RnDA_E, RnDB_E, SrcB;
 	logic [63:0] RvDA_E;
 	logic [7:0] RhD_E;
@@ -38,26 +39,38 @@ module pipeline();
 	logic PCSrc_W, ScalarWrite_W, VectorWrite_W, HistogramWrite_W, MemtoReg_W;
 	logic [15:0] ALUResult_W;
 	logic [63:0] LanesResult_W;
-	logic [7:0] RhD_W;
-	logic RvD_W;
+	logic [7:0] RhD_W; 
+	logic RvD_W; 
 	logic [2:0] RnD_W;
 	logic [63:0] Res_W;
+	logic [63:0] DataFromMem_W;
+	
+	logic stall_D, stall_F, Flush_D, Flush_E, stall_E, FStall, PCSrc_FtoD;
+	
+	logic save, finish;
+	logic match[3:0];
+	
+	
+	hazardUnit 					hazardUnit (op, PCSrc_W,
+													ScalarWrite_E, ScalarWrite_M, ScalarWrite_W,VectorWrite_E,VectorWrite_M, VectorWrite_W,HistogramWrite_E,HistogramWrite_M,HistogramWrite_W,
+													RvD_E, RvD_M, RvD_W, RvS,  		RnD_E, RnD_M, RnD_W, RnSA, RnSB,   			RhD_E, RhD_M, RhD_W, RhD,  
+													stall_D, stall_F,stall_E, Flush_D,Flush_E, match);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////// FETCH ///////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
-	
+	 
 	mux_pc	 					mux_pc (PCPlus4, ALUResult_W, PCSrc_W, PC_IN);
 	
-	PCREG 						PCREG (clk, reset, enable,PC_IN,PC); // enable from HU
+	PCREG 						PCREG (clk, reset, stall_F, PCSrc_W,  PC_IN, PC, PCSrc_FtoD); // enable from HU
 		
-	adder 						adder (PC ,16'b100,PCPlus4);
+	adder 						adder (PC ,16'b100,PCPlus4);  
 	
 	instructionMemory 		instructionMemory(PC, InstrF);
 	 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	pipe_FtoD					pipe_FtoD (clk, reset, enable_FtoD, FlushD, InstrF, InstrD);
+	pipe_FtoD					pipe_FtoD (clk, reset, stall_D, Flush_D, PCSrc_W, PCSrc_FtoD, InstrF, InstrD);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////// DECODE///////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,9 +81,9 @@ module pipeline();
 	controlUnit					controlUnit (op, cond, GET8_D, PCSrc_D, ScalarWrite_D, VectorWrite_D, HistogramWrite_D, MemtoReg_D, MemWrite_D, Branch_D,
 													 HistSrc_D, FlagWrite_D, ImmSrc_D, VectorOrHistogram_D, ALUControl_D, LaneControl_D);
 	
-	scalarRegisterFile		scalarRegisterFile (clk,ScalarWrite_W,RnSA,RnSB,RnD,ALUResult_W,PCPlus4,RnDA_D,RnDB_D); // r7?
+	scalarRegisterFile		scalarRegisterFile (clk,ScalarWrite_W,RnSA,RnSB,RnD_W,ALUResult_W,PCPlus4,RnDA_D,RnDB_D); // r7?
 	
-	vectorRegisterFile		vectorRegisterFile (clk,VectorWrite_W,RvS,RvD,Res_W,RvD_VRF);
+	vectorRegisterFile		vectorRegisterFile (clk,VectorWrite_W,RvS,RvD_W,Res_W,RvD_VRF);
 	 
 	mux_vector					mux_vector (RvD_VRF,Imm[2:0],V8bit);  
 	
@@ -81,26 +94,26 @@ module pipeline();
 	mux_VorH 					mux_VorH (RhD_HRF, RvD_VRF,VectorOrHistogram_D,RvDA_D); 
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	pipe_DtoE					pipe_DtoE(clk,reset,enable, FlushE, 
+	pipe_DtoE					pipe_DtoE(clk,reset,stall_E, Flush_E,  
 												 GET8_D, PCSrc_D, ScalarWrite_D, VectorWrite_D, HistogramWrite_D, MemtoReg_D, MemWrite_D, Branch_D, 
-												 LaneControl_D, FlagsW_D,FlagWrite_D,ALUControl_D,ImmSrc_D,Imm,RnDA_D, RnDB_D, RvDA_D,RhD,RvD,RnD,
+												 LaneControl_D, Flags_D,ALUControl_D,ImmSrc_D,Imm,RnDA_D, RnDB_D, RvDA_D,RhD,RvD,RnD,
 												 GET8_E, PCSrc_E, ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E, Branch_E, 
-												 LaneControl_E, FlagsW_E,FlagWrite_E,ALUControl_E,ImmSrc_E,Imm_E,RnDA_E, RnDB_E, RvDA_E,RhD_E,RvD_E,RnD_E);
+												 LaneControl_E, Flags_E,ALUControl_E,ImmSrc_E,Imm_E,RnDA_E, RnDB_E, RvDA_E,RhD_E,RvD_E,RnD_E);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////// EXECUTE//////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	mux_ImmSrc 					mux_ImmSrc (RnDB_E, Imm_E,ImmSrc_E,SrcB);
+	mux_ImmSrc 					mux_ImmSrc (RnDB_E, Imm_E,ImmSrc_E,SrcB); 
 	
-	ALU							ALU (RnDA_E, SrcB,ALUControl_E,FlagsW_D,ALUResult_E); // Evaluate cond bnp //FLAGS
+	ALU							ALU (RnDA_E, SrcB,ALUControl_E,Flags_E[4],Flags_D,ALUResult_E); // Evaluate cond bnp //FLAGS
 	
 	LANES 						LANES (LaneControl_E, RvDA_E,SrcB,RhD_E[7:6],LanesResult);	
 	
-	mux_GET8 					mux_GET8 (LanesResult,RvDA_E,GET8_E, LanesResult_E);
+	mux_GET8 					mux_GET8 (LanesResult,RvDA_E,GET8_E, LanesResult_E); 
 			  
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	pipe_EtoM					pipe_EtoM (clk,reset,enable, Flush_M, // hazard unit 
-												  PCSrc_E , ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E,ALUResult_E, LanesResult_E,
+												  PCSrc_E, ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E,ALUResult_E, LanesResult_E,
 												  RhD_E,RvD_E,RnD_E,
 												  PCSrc_M, ScalarWrite_M, VectorWrite_M, HistogramWrite_M, MemtoReg_M, MemWrite_M,ALUResult_M, LanesResult_M,
 												  RhD_M,RvD_M,RnD_M);
@@ -108,7 +121,7 @@ module pipeline();
 	/////////////////////////////////////////// MEMORY //////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	dataMemory					dataMemory (clk, ALUResult_M, LanesResult_M, MemWrite_M, DataFromMem_M);
+	dataMemory					dataMemory (clk, ALUResult_M, LanesResult_M, MemWrite_M, save, finish, DataFromMem_M);
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	pipe_MtoW					pipe_MtoW (clk, reset,enable, FlushW, // hazard unit 
@@ -122,16 +135,26 @@ module pipeline();
 	
 	mux_WB 						mux_WB (DataFromMem_W, LanesResult_W,MemtoReg_W,Res_W);
 	 
-
+	assign save = (op==4'b1111) ? 1 : 0; 
 	always 
 		begin  
 			clk <= 1; 
-			# 5;
+			# 10;
 			clk <= 0; 
-			# 5;
+			# 10;
 		end
+	
+	always @ (posedge finish)
+		begin 
+			$stop;
+		end
+	
 	initial 
 		begin
+			finish  <=0;
+			stall_D <=0;
+			stall_F <=0;
+			Flush_D <=0; 
 			#5;
 			reset <=1;
 			#5;

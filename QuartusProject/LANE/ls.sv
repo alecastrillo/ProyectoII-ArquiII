@@ -5,4 +5,4 @@ module ls(input logic 		  	Size, 		 // 0 for 16bits 1 for 8bits
 	
 	assign Res = V;
  
-endmodule 
+endmodule  

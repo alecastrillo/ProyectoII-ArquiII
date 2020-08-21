@@ -13,11 +13,13 @@ module vectorRegisterFile (input logic 			clk,WE,
 			$readmemh("mem_vectorRegisters.mem",vector_register_memory);
 		end
 		
+	assign RD =  vector_register_memory[first_source_register];
+	
 	always_ff@(negedge clk)  
 		// Writes in register when WriteEnable = True
 		if(WE)
 			vector_register_memory[destination_register] = WD;
 			
-	assign RD =  vector_register_memory[first_source_register];
+	
 
 endmodule

@@ -10,4 +10,4 @@ module instructionMemory ( input logic [15:0] A,
 
 	assign RD = memory[A[15:2]]; // Word aligned
 
-endmodule 
+endmodule  

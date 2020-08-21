@@ -1,7 +1,0 @@
-module mux_ImmSrc (input logic [63:0] A, Imm,
-						input logic ImmSrc,
-						output logic Out);
-					
-		assign Out = ( ImmSrc ) ? Imm : A;
-
-endmodule 

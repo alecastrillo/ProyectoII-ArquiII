@@ -17,7 +17,7 @@ module tb_instructionMemory ();
 			# 5; 
 			A <= A+4; 
 			# 5; 
-			A <= A+4; 
+			A <= 31'b100100;  
 			# 5;
 		end
 

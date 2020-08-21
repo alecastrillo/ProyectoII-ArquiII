@@ -1,5 +1,6 @@
 module ALU(input logic [15:0] 	A, B,
 			  input logic [2:0] 		ALUControl,
+			  input logic EQ,
 			  output logic [4:0] 	Flags,
 			  output logic [15:0] 	RESULT);
 											
@@ -11,8 +12,8 @@ module ALU(input logic [15:0] 	A, B,
 					//01 inc
 					//10 cmp
 					//11 load or store
-					//100 mov
-					//101 b 
+					//100 mov b
+					//101 bnq 
 					
 					initial begin
 						Flags = 5'b0;
@@ -28,7 +29,7 @@ module ALU(input logic [15:0] 	A, B,
 					assign ls_res = A;
 					
 					//MUX de la alu
-					mux_ALU mux_ALU(add_res, inc_res, A, B, ALUControl, RESULT);
+					mux_ALU mux_ALU(add_res, inc_res, A, B, EQ, ALUControl, RESULT);
 					
 					//Calcula las flags
 					flags flags_F(A,B,suma_R,RESULT,cout, cmp_res, ALUControl,Flags);

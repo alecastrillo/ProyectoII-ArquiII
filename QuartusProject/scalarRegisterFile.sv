@@ -16,8 +16,12 @@ module scalarRegisterFile (input logic 			clk,WE,
 		
 	always_ff@(negedge clk)  
 		// Writes in register when WriteEnable = True
-		if(WE)
-			scalar_register_memory[destination_register] = WD;
+		if(WE) begin
+			if (destination_register==3'b111)
+				scalar_register_memory[destination_register] = R7;
+			else 
+				scalar_register_memory[destination_register] = WD;
+		end
 			
 	assign RD1 = ( first_source_register == 3'b111) ? R7 : scalar_register_memory[first_source_register];
 	assign RD2 = ( second_source_register == 3'b111) ? R7 : scalar_register_memory[second_source_register];

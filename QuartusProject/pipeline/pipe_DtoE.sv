@@ -1,10 +1,9 @@
 module pipe_DtoE(input logic clk,
 						  input logic reset,
-						  input logic enable, FlushE, // hazard unit 
+						  input logic stall, Flush_E, // hazard unit 
 						  input logic GET8_D, PCSrc_D, ScalarWrite_D, VectorWrite_D, HistogramWrite_D, MemtoReg_D, MemWrite_D, Branch_D, 
 						  input logic [2:0] LanesControl_D, 
-						  input logic FlagsW_D,
-						  input logic FlagWrite_D,
+						  input logic [4:0] Flags_D,
 						  input logic [2:0] ALUControl_D,
 						  input logic ImmSrc_D,
 						  
@@ -16,8 +15,7 @@ module pipe_DtoE(input logic clk,
 						  
 						  output logic GET8_E, PCSrc_E, ScalarWrite_E, VectorWrite_E, HistogramWrite_E, MemtoReg_E, MemWrite_E, Branch_E, 
 						  output logic [2:0] LanesControl_E, 
-						  output logic FlagsW_E,
-						  output logic FlagWrite_E,
+						  output logic [4:0]Flags_E,
 						  output logic [2:0] ALUControl_E,
 						  output logic ImmSrc_E,
 						  
@@ -42,8 +40,7 @@ module pipe_DtoE(input logic clk,
 				MemWrite_E <=0;
 				Branch_E <=0;
 				LanesControl_E <=3'b0;
-				FlagsW_E <=0;
-				FlagWrite_E<=0;
+				Flags_E <=5'b0;
 				ALUControl_E<=3'b0;
 				ImmSrc_E<=0;
 				Imm_E<=16'b0;
@@ -55,8 +52,7 @@ module pipe_DtoE(input logic clk,
 				RnD_E<=3'b0;
 			end else begin
 					//Si el hazardUnit nos esta diciendo que hagamos un flush
-					if (FlushE) begin
-						//devolvemos una cadena de 32 0s
+					if (Flush_E) begin 
 						GET8_E <=0;
 						PCSrc_E <=0;
 						ScalarWrite_E <=0;
@@ -66,8 +62,7 @@ module pipe_DtoE(input logic clk,
 						MemWrite_E <=0;
 						Branch_E <=0;
 						LanesControl_E <=3'b0;
-						FlagsW_E <=0;
-						FlagWrite_E<=0;
+						Flags_E <=5'b0;
 						ALUControl_E<=3'b0;
 						ImmSrc_E<=0;
 						Imm_E<=16'b0;
@@ -75,31 +70,35 @@ module pipe_DtoE(input logic clk,
 						RnDB_E<=16'b0;
 						RvDA_E<=64'b0;
 						RhD_E<=8'b0;
-						RvD_E<=0; 
+						RvD_E<=0;
 						RnD_E<=3'b0;
 					end else begin
-						GET8_E 					<=GET8_D;
-						PCSrc_E 					<=PCSrc_D;
-						ScalarWrite_E 			<=ScalarWrite_D;
-						VectorWrite_E 			<=VectorWrite_D;
-						HistogramWrite_E 		<=HistogramWrite_D;
-						MemtoReg_E 				<=MemtoReg_D;
-						MemWrite_E 				<=MemWrite_D; 
-						Branch_E 				<=Branch_D;
-						LanesControl_E 		<=LanesControl_D;
-						FlagsW_E 				<=FlagsW_D;
-						FlagWrite_E				<=FlagWrite_D;
-						ALUControl_E			<=ALUControl_D;
-						ImmSrc_E					<=ImmSrc_D;
-						Imm_E						<=Imm_D;
-						RnDA_E					<=RnDA_D;
-						RnDB_E					<=RnDB_D;
-						RvDA_E					<=RvDA_D;
-						RhD_E						<=RhD_D;
-						RvD_E						<=RvD_D;
-						RnD_E						<=RnD_D;
+						if (~stall) begin
+							GET8_E 					<=GET8_D;
+							PCSrc_E 					<=PCSrc_D;
+							ScalarWrite_E 			<=ScalarWrite_D;
+							VectorWrite_E 			<=VectorWrite_D;
+							HistogramWrite_E 		<=HistogramWrite_D;
+							MemtoReg_E 				<=MemtoReg_D;
+							MemWrite_E 				<=MemWrite_D; 
+							Branch_E 				<=Branch_D;
+							LanesControl_E 		<=LanesControl_D;
+							Flags_E 				<=Flags_D;
+							ALUControl_E			<=ALUControl_D;
+							ImmSrc_E					<=ImmSrc_D;
+							Imm_E						<=Imm_D;
+							RnDA_E					<=RnDA_D;
+							RnDB_E					<=RnDB_D;
+							RvDA_E					<=RvDA_D;
+							RhD_E						<=RhD_D;
+							RvD_E						<=RvD_D;
+							RnD_E						<=RnD_D;
+						end
 					end
-			end
+				end
+			
+			
+			
 		end
 endmodule 
 						  

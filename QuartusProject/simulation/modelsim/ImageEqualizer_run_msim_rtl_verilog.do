@@ -33,6 +33,7 @@ vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoI
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/pipeline.sv}
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_ImmSrc.sv}
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/mux_GET8.sv}
+vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/hazardUnit.sv}
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/dataMemory.sv}
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/vectorRegisterFile.sv}
 vlog -sv -work work +incdir+/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject {/home/alecastrillo/Cursos/Arqui/ProyectoII/ProyectoII-ArquiII/QuartusProject/instructionMemory.sv}

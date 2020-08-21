@@ -51,6 +51,16 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_scalarRegisterFile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_LANES.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_lane.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_controlUnit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_ALU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_vectorRegisterFile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_histogramRegisterFile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_instructionMemory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench/tb_memory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE LANE/ls.sv
 set_global_assignment -name SYSTEMVERILOG_FILE LANE/norm.sv
 set_global_assignment -name TEXT_FILE hexImage3.txt
@@ -91,8 +101,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE mux_HSrc.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pipeline.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux_ImmSrc.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux_GET8.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hazardUnit.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE hazardUnit.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,7 +1,0 @@
-module mux_WB (input logic [63:0] DataFromMem, VectRes,
-					input logic MemtoReg,
-					output logic out);
-					
-		assign out = ( MemtoReg ) ? DataFromMem : VectRes;
-
-endmodule 

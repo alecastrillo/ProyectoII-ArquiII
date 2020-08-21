@@ -1,6 +1,6 @@
 module pipe_FtoD(input logic clk,
 						  input logic reset,
-						  input logic enable, FlushD, // hazard unit 
+						  input logic stall, FlushD,PCSrc_W, PCSrc_FtoD, // hazard unit 
 						  input logic [31:0] InstrF,
 						  output logic [31:0] InstrD);
 
@@ -14,14 +14,15 @@ module pipe_FtoD(input logic clk,
 				//si el reset no esta activado seguimos normalmente
 				begin
 					//Si el hazardUnit nos esta diciendo que hagamos un flush
-					if (FlushD)
-						//devolvemos una cadena de 32 0s
+					if (FlushD || PCSrc_W) begin
+ 
 						InstrD <= 0;
 					//si en cambio, el StallD esta en 0, entonces al estar negada la entrada nos da un 1, por lo que damos como resultado 
 					//la instruccion de entrada 
-					else //if (enable)
+					end else if (~stall)
+ 
 						InstrD <= InstrF;
 			end
 		end
-endmodule 
-				
+endmodule  
+				  
